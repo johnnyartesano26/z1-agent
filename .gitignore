@@ -8,6 +8,7 @@ data/*.csv
 data/*.xlsx
 !data/remisiones_ejemplo.xlsx
 !data/inventario_ejemplo.csv
+!data/clientes.ejemplo.csv
 
 # Logs
 *.log
