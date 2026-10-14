@@ -22,15 +22,9 @@ Agente de automatización para **facturación e inventario** de una cervecería 
 **Resultado:** Eliminación de errores de facturación manual y liberación de ~10 horas semanales de trabajo operativo.
 
 ## 🏗️ Arquitectura del pipeline
-
-```mermaid
-flowchart LR
-    A[Google Sheets<br/>Remisiones] --> B[Python<br/>filtra pendientes]
-    B --> C[Alegra API<br/>crea factura draft]
-    C --> D[SQLite<br/>descuenta inventario]
-    D --> E[Google Sheets<br/>marca Facturado]
-    E --> F[Ledger local<br/>anti-duplicados]
-    F --> G[Telegram Bot<br/>notificación]
+Google Sheets (Remisiones) → Python filtra pendientes → Alegra API (factura draft)
+→ SQLite (descuenta inventario) → Google Sheets (marca Facturado)
+→ Ledger local (anti-duplicados) → Telegram Bot (notificación)
 🛠️ Stack técnico
 Lenguaje: Python 3.9+
 
